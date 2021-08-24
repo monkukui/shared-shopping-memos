@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>Shared shopping memos</title>
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/8.10.0/firebase-app.js"></script>
@@ -14,52 +17,131 @@
     <script defer src="/__/firebase/8.10.0/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
+</head>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome meee</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+<body>
+<header>
+    <div class="container">
+        <div class="header-left">
+            <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
+        </div>
+        <div class="header-right">
+            <div class="login">ログイン</div>
+        </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+</header>
+<div class="signup-modal-wrapper" id="signup-modal">
+    <div class="modal">
+        <div id="close-modal">
+            <i class="fa fa-2x fa-times"></i>
+        </div>
+        <div id="signup-form">
+            <h2>Emailで新規登録</h2>
+            <form action="#">
+                <input class="form-control" type="text" placeholder="メールアドレス">
+                <input class="form-control" type="password" placeholder="パスワード">
+                <div id="submit-btn">新規登録</div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="top-wrapper">
+    <div class="container">
+        <h1>LEARN TO CODE.<br>LEARN TO BE CREATIVE.</h1>
+        <p>progateはオンラインプログラミング学習サービスです。<br>初心者にもやさしいスライドとレッスンで、ウェブサービスを作りながらプログラミングを学んでいきましょう。</p>
+        <div class="btn signup signup-show">新規登録はこちら</div>
+        <p>or</p>
+        <div class="btn facebook"><span class="fa fa-facebook"></span>Facebookで登録</div>
+        <div class="btn twitter"><span class="fa fa-twitter"></span>Twitterで登録</div>
+    </div>
+</div>
+<div class="lesson-wrapper">
+    <div class="container">
+        <div class="heading">
+            <h2>Learn Where to Get Started!</h2>
+        </div>
+        <div class="lessons">
+            <div class="lesson lesson-hover">
+                <div class="lesson-icon">
+                    <img src="https://prog-8.com/images/html/advanced/html.png">
+                    <p>HTML & CSS</p>
+                </div>
+                <p class="text-contents">ウェブページの作成に使用される言語です。HTMLとCSSを組み合わせることで、静的なページを作り上げることができます。</p>
+            </div>
+            <div class="lesson">
+                <div class="lesson-icon">
+                    <img src="https://prog-8.com/images/html/advanced/jQuery.png">
+                    <p>jQuery</p>
+                </div>
+                <p class="text-contents">素敵な動きを手軽に実装できるJavaScriptライブラリです。
+                    アニメーション効果をつけたり、Ajax（エイジャックス）を使って外部ファイルを読み込んだりと色々なことができます。</p>
+            </div>
+            <div class="lesson">
+                <div class="lesson-icon">
+                    <img src="https://prog-8.com/images/html/advanced/ruby.png">
+                    <p>Ruby</p>
+                </div>
+                <p class="text-contents">オープンソースの動的なプログラミング言語で、
+                    シンプルさと高い生産性を備えています。大きなWebアプリケーションから小さな日用ツールまで、さまざまなソフトウェアを作ることができます。</p>
+            </div>
+            <div class="lesson">
+                <div class="lesson-icon">
+                    <img src="https://prog-8.com/images/html/advanced/php.png">
+                    <p>PHP</p>
+                </div>
+                <p class="text-contents">HTMLだけではページの内容を変えることはできません。PHPはHTMLにプログラムを埋め込み、それを可能にします。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="faq-wrapper">
+    <div class="container">
+        <div class="heading">
+            <h2>FAQ</h2>
+        </div>
+        <div class="faq">
+            <ul id="faq-list">
+                <li class="faq-list-item">
+                    <h3 class="question">Progateの公式キャラクターはなんですか？</h3>
+                    <span>+</span>
+                    <div class="answer">
+                        <p>にんじゃわんこといいます。忍者の格好をしたわんこです。ネコではありません。</p>
+                    </div>
+                </li>
+                <li class="faq-list-item">
+                    <h3 class="question">にんじゃわんこはオスですか？それともメスですか？</h3>
+                    <span>+</span>
+                    <div class="answer">
+                        <p>にんじゃわんこはオスです。</p>
+                    </div>
+                </li>
+                <li class="faq-list-item">
+                    <h3 class="question">にんじゃわんこは何歳ですか？</h3>
+                    <span>+</span>
+                    <div class="answer">
+                        <p>にんじゃわんこは14歳です。</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="message-wrapper">
+    <div class="container">
+        <div class="heading">
+            <h2>さぁ、あなたもProgateでプログラミングを学んでみませんか?</h2>
+            <h3 id="tagline">Let's learn to code, learn to be creative!</h3>
+        </div>
+        <span class="btn message signup-show">さっそく開発する</span>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <img src="https://prog-8.com/images/html/advanced/footer_logo.png">
+        <p>Learn to Code,Learn to be Creative.</p>
+    </div>
+</footer>
+<script src="../js/index.js"></script>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+</body>
 </html>
