@@ -9,8 +9,4 @@ services:
             - STAGE=TEST
             - PORT=8080
         entrypoint: 
-            - sh
-            - -t
-            - "1"
-            - --
             - ./main
